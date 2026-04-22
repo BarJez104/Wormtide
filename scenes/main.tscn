@@ -1,61 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqj8m3n4p5r6s7"]
+[gd_scene format=3 uid="uid://bxcfw6gs5sya"]
 
-[ext_resource type="CSharpScript" path="res://scripts/Player.cs" id="1_player"]
-[ext_resource type="CSharpScript" path="res://scripts/CameraRig.cs" id="2_cam"]
+[ext_resource type="PackedScene" uid="uid://bppnxx32n1drv" path="res://scenes/player.tscn" id="1_o5qli"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_map"]
-size = Vector2(20, 20)
-
-[sub_resource type="StandardMaterial3D" id="Mat_green"]
-albedo_color = Color(0.25, 0.65, 0.28, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
+size = Vector3(100, 2, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape_map"]
-size = Vector3(20, 0.2, 20)
+size = Vector3(100, 2, 100)
 
-[sub_resource type="SphereMesh" id="SphereMesh_player"]
-radius = 0.5
-height = 1.0
+[node name="Main" type="Node3D" unique_id=816149370]
 
-[sub_resource type="StandardMaterial3D" id="Mat_blue"]
-albedo_color = Color(0.2, 0.45, 1, 1)
-
-[sub_resource type="SphereShape3D" id="SphereShape_player"]
-radius = 0.5
-
-[node name="Main" type="Node3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1227894608]
 transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 14, 10)
 
-[node name="Map" type="StaticBody3D" parent="."]
+[node name="Player" parent="." unique_id=1785878600 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.225769, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
-mesh = SubResource("PlaneMesh_map")
-surface_material_override/0 = SubResource("Mat_green")
+[node name="Map" type="StaticBody3D" parent="." unique_id=370877427]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map" unique_id=449022707]
+mesh = SubResource("BoxMesh_o5qli")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map" unique_id=1206666426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape_map")
-
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-floor_snap_length = 0.25
-script = ExtResource("1_player")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("SphereMesh_player")
-surface_material_override/0 = SubResource("Mat_blue")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("SphereShape_player")
-
-[node name="CameraRig" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 0)
-script = ExtResource("2_cam")
-
-[node name="Camera3D" type="Camera3D" parent="CameraRig"]
-rotation_degrees = Vector3(-90, 0, 0)
-projection = 1
-current = true
-size = 18.0
