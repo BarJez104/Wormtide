@@ -1,3 +1,28 @@
-# Godot 4+ specific ignores
+# Godot
 .godot/
 /android/
+*.translation
+*.import
+export.cfg
+export_presets.cfg
+
+# C# / .NET
+obj/
+bin/
+.vs/
+*.user
+*.suo
+*.userprefs
+.mono/
+data_*/
+mono_crash.*.json
+nuget.dgspec.json
+project.assets.json
+project.nuget.cache
+*.nupkg
+
+# Rider / JetBrains (keep .idea tracked if desired, otherwise uncomment)
+# .idea/
+
+# VS Code
+.vscode/
