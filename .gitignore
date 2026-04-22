@@ -10,6 +10,8 @@ export_presets.cfg
 obj/
 bin/
 .vs/
+.vscode/
+.idea/
 *.user
 *.suo
 *.userprefs
@@ -20,7 +22,3 @@ nuget.dgspec.json
 project.assets.json
 project.nuget.cache
 *.nupkg
-.idea/
-
-# VS Code
-.vscode/
