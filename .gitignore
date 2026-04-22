@@ -20,9 +20,7 @@ nuget.dgspec.json
 project.assets.json
 project.nuget.cache
 *.nupkg
-
-# Rider / JetBrains (keep .idea tracked if desired, otherwise uncomment)
-# .idea/
+.idea/
 
 # VS Code
 .vscode/
