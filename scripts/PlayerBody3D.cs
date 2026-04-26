@@ -1,10 +1,12 @@
 using Godot;
-using System;
 
-public partial class PlayerBody3d : CharacterBody3D
+namespace Wormtide.scripts;
+
+public partial class PlayerBody3D : CharacterBody3D
 {
-	public const float Speed = 5.0f;
-	public const float JumpVelocity = 4.5f;
+	[Export] public float Speed = 5.0f;
+	[Export] public float JumpVelocity = 4.5f;
+	public int CollectedCoins = 0;
 
 	public override void _PhysicsProcess(double delta)
 	{
