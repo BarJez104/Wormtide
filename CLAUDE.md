@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Wormtide** is a 3D game built with Godot 4.6 and C# (.NET 8.0). Physics is handled by Jolt Physics. The main entry point is `res://scenes/main.tscn`.
 
+The game is inspired by **Magicka** — see [`GAME-INSPIRATION.md`](GAME-INSPIRATION.md) for an overview of its core mechanics and the design pillars that inform Wormtide's direction.
+
 ## Running and Building
 
 ```bash

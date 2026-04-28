@@ -8,6 +8,7 @@
     <ItemGroup>
         <Content Include="assets\*"/>
         <Content Include="CLAUDE.md" />
+        <Content Include="GAME-INSPIRATION.md" />
         <Content Include="scenes\*"/>
         <Content Include="components\*"/>
     </ItemGroup>
