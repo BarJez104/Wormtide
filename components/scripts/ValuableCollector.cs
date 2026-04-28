@@ -2,7 +2,7 @@ using Godot;
 
 public partial class ValuableCollector : Area3D
 {
-	[Export] public int CollectedCoins;
+	[Export] public float CollectedCoins;
 	[Signal] public delegate void ValuableCollectedEventHandler();
 
 	public override void _Ready()
@@ -16,7 +16,7 @@ public partial class ValuableCollector : Area3D
 	{
 		if (node is Valuable valuable)
 		{
-			CollectedCoins += (int)valuable.Value;
+			CollectedCoins += valuable.Value;
 			valuable.OnCollected(this);
 			EmitSignal(SignalName.ValuableCollected);
 		}
