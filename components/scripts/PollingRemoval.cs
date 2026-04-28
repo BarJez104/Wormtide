@@ -3,6 +3,9 @@ using Wormtide.components.scripts.interfaces;
 
 namespace Wormtide.components.scripts;
 
+/// <summary>
+/// Removes the object from the game while polling it towards the invoker
+/// </summary>
 public partial class PollingRemoval : Removal
 {
 	[Export] public float PullSpeed = 10.0f;

@@ -70,8 +70,13 @@ New scenes go in `scenes/` with their script in `scripts/`. Reusable components 
 - Inherits `Node3D`
 - Spins the coin around Y each `_Process` frame (`RotationSpeed` export, default 0.5)
 
+**`scripts/consts/GameActions.cs`** (`Wormtide` namespace)
+- Constants for gameplay input actions: `MoveLeft/Right/Forward/Back` (WASD) and `Jump` (Space)
+- Add new gameplay actions here when introducing new player controls
+
 **`scripts/consts/UiActions.cs`** (`Wormtide` namespace)
-- Static class of string constants for all built-in Godot UI actions (`ui_accept`, `ui_left`, etc.)
+- Static class of string constants for **every** input action defined in `project.godot` — both built-in UI actions (`ui_accept`, `ui_left`, etc.) and custom gameplay actions (`spell_1`–`spell_5`)
+- Every new input action added to `project.godot` must also get a constant here
 - Always use these constants instead of raw strings when reading input
 
 **`components/scripts/interfaces/Removal.cs`** (`Wormtide.components.scripts.interfaces` namespace)
@@ -104,6 +109,7 @@ New scenes go in `scenes/` with their script in `scripts/`. Reusable components 
 
 - All scripts use the `Wormtide` namespace (or a sub-namespace like `Wormtide.scripts`, `Wormtide.components.scripts`).
 - Use `_PhysicsProcess` for movement and physics; `_Process` for purely visual updates (e.g. spinning).
-- Read input via `Input.GetVector` / `Input.IsActionJustPressed` using constants from `UiActions`.
+- Read input via `Input.GetVector` / `Input.IsActionJustPressed` using constants from `UiActions`. Never use raw action name strings inline.
+- When adding a new input action to `project.godot`, always add a matching constant to `scripts/consts/UiActions.cs` in the same commit.
 - Node references use `[Export]` properties wired in the scene, not hardcoded `GetNode` paths.
 - `[Export]` fields on `CharacterBody3D`/`Area3D` nodes will show CS8618 nullable warnings — this is expected for Godot export fields and can be ignored.

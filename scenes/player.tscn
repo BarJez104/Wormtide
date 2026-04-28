@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3mopxism15nw" path="res://scripts/PlayerBody3D.cs" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://d11t31mkawray" path="res://components/ValuableCollector.tscn" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://cspellcastscn" path="res://components/SpellCaster.tscn" id="3_spcst"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qhqgy"]
 
@@ -18,8 +19,8 @@ shadow_color = Color(0, 0, 0, 0.9372549)
 
 [node name="Player" type="CharacterBody3D" unique_id=1313418396 node_paths=PackedStringArray("ValuableCollector", "CoinsLabel")]
 script = ExtResource("1_3vyb7")
-Speed = null
-JumpVelocity = null
+Speed = 5.0
+JumpVelocity = 4.5
 ValuableCollector = NodePath("ValuableCollector")
 CoinsLabel = NodePath("Label")
 
@@ -46,3 +47,5 @@ text = "teate"
 label_settings = SubResource("LabelSettings_g2els")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SpellCaster" parent="." unique_id=444555666 instance=ExtResource("3_spcst")]

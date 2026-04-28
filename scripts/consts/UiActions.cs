@@ -21,4 +21,10 @@ public static class UiActions
 
     public const string Menu = "ui_menu";
     public const string TextSubmit = "ui_text_submit";
+
+    public const string FireSpell = "spell_fire";
+    public const string WaterSpell = "spell_water";
+    public const string EarthSpell = "spell_earth";
+    public const string LightningSpell = "spell_lightning";
+    public const string ArcaneSpell = "spell_arcane";
 }

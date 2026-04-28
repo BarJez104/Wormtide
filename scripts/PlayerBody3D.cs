@@ -31,13 +31,12 @@ public partial class PlayerBody3D : CharacterBody3D
 			velocity += GetGravity() * (float)delta;
 		}
 
-		// Handle Jump.
-		if (Input.IsActionJustPressed(UiActions.Accept) && IsOnFloor())
+		if (Input.IsActionJustPressed(GameActions.Jump) && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
 		}
 
-		Vector2 inputDir = Input.GetVector(UiActions.Left, UiActions.Right, UiActions.Up, UiActions.Down);
+		Vector2 inputDir = Input.GetVector(GameActions.MoveLeft, GameActions.MoveRight, GameActions.MoveForward, GameActions.MoveBack);
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		if (direction != Vector3.Zero)
 		{
