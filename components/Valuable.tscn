@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4gehd4qlotr3"]
+
+[ext_resource type="Script" uid="uid://ciacltvwgckj3" path="res://components/scripts/Valuable.cs" id="1_bowhg"]
+[ext_resource type="PackedScene" uid="uid://dikf3su26h6o" path="res://components/PollingRemoval.tscn" id="2_desint"]
+
+[node name="Valuable" type="Area3D" unique_id=1859605769]
+script = ExtResource("1_bowhg")
+Desintegration = NodePath("Desintegration")
+
+[node name="Desintegration" parent="." instance=ExtResource("2_desint")]

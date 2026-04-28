@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d11t31mkawray"]
 
-[ext_resource type="Script" uid="uid://cv465h0nq5pnc" path="res://scripts/componenets/ValuableCollector.cs" id="1_qoypx"]
+[ext_resource type="Script" uid="uid://cv465h0nq5pnc" path="res://components/scripts/ValuableCollector.cs" id="1_qoypx"]
 
 [node name="ValuableCollector" type="Area3D" unique_id=629618389]
 script = ExtResource("1_qoypx")

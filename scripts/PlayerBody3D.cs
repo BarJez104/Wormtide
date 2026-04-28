@@ -6,7 +6,19 @@ public partial class PlayerBody3D : CharacterBody3D
 {
 	[Export] public float Speed = 5.0f;
 	[Export] public float JumpVelocity = 4.5f;
-	public int CollectedCoins = 0;
+	[Export] public ValuableCollector ValuableCollector;
+	[Export] public Label CoinsLabel;
+
+	public override void _Ready()
+	{
+		ValuableCollector.ValuableCollected += OnValuableCollected;
+		CoinsLabel.Text = "Coins: 0";
+	}
+
+	private void OnValuableCollected()
+	{
+		CoinsLabel.Text = $"Coins: {ValuableCollector.CollectedCoins}";
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{

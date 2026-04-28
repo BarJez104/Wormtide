@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dikf3su26h6o"]
+
+[ext_resource type="Script" uid="uid://h6pxlns50052" path="res://components/scripts/PollingRemoval.cs" id="1_s0208"]
+
+[node name="PollingRemoval" type="Node3D" unique_id=150960800]
+script = ExtResource("1_s0208")

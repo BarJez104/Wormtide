@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://4gehd4qlotr3"]
-
-[ext_resource type="Script" uid="uid://ciacltvwgckj3" path="res://scripts/componenets/Valuable.cs" id="1_bowhg"]
-
-[node name="Valuable" type="Area3D" unique_id=1859605769]
-script = ExtResource("1_bowhg")
